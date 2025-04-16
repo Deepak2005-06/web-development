@@ -1,0 +1,12 @@
+table,th,tr,td{
+    border: 2px black solid;
+}
+
+table{
+    width: 50%;
+    height: 100%;
+}
+
+range{
+    color: black;
+}
