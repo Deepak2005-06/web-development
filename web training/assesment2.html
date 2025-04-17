@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+ <style>
+    *{
+        box-sizing: border-box;
+    }
+    nav{
+        display: flex;
+        justify-content: space-between;
+        background: rgb(255, 255, 255);
+        color: rgb(255, 118, 12);
+        margin: 10px;
+        padding: 10px 20px;
+    }
+    nav ul{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        list-style: none;
+        padding: 8px 12px;
+    }
+
+    nav ul li a{
+        text-decoration: none;
+        color: black;
+        padding: 10px;
+    }
+
+    nav ul li a:hover{
+        text-decoration: none;
+        color:  rgb(255, 118, 12);
+        border-radius: 40px;
+
+    }
+    #Sign
+    {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 12px;
+        height: auto;
+        width: auto;
+        gap: 10px;
+        border-radius: 100%;
+    
+    
+    }
+  #meal{
+        display: flex;
+       position: relative;
+        width: 50%;   
+        height: 400px;
+        background-color: #f60;
+        
+    }
+    #meal2{
+        display: flex;
+        position: relative;
+        width: 50%;
+        justify-content: flex-end;
+
+        color: grey;
+        text-wrap: nowrap;   
+    }
+    .home {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+            position: relative;
+            min-height: 400px;
+        }
+
+    .home-content h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+       
+    .landing button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #f60;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+
+     .button {
+            display: flex;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #f60;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+    .mean{
+        display: flex;
+        margin-top: 60%;
+        margin-right: 50%;
+        padding: 10px;
+        text-wrap: nowrap;
+        
+    }
+
+ </style>
+  
+    
+</head>
+<body>
+    <nav>
+        <h1>My logo</h1>
+        <ul>
+            <li><a href="#Home" style="color: orangered;">Home</a></li>
+            <li><a href="#Services">Services</a></li>
+            <li><a href="#Foods">Foods</a></li>
+            <li><a href="#Contact">Contact</a></li>
+            <li><a href="#About">About</a></li>
+           
+        </ul>
+        <div id="Sign">
+        <button style="border: 2px solid red; height: 40px; border-radius: 12px;background-color: white;">Sign in</button>
+        <button style="background-color: orangered;height: 40px; border: 1px solid black;  border-radius: 12px; color: white;">Sign Up</button>
+       </div>
+</nav>
+<div class="landing">
+    <h>--->Fresh & Delicious</h>
+    <h1>Delicious Meals <br> Delivered to Your Door</h1>
+    <p>Enjoy flavorful meals made with the finest ingredients, delivered right to your door every time.</p>
+    <button class="order">Order More</button>
+    <br> <button class="learn">Learn More</button>
+</div>
+</div>
+
+</body>
+</html>
