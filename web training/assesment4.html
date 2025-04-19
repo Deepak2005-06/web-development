@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+      .container {
+            display: flex;
+        }
+    #heading
+    {
+        font-size: xx-large;
+    }
+    .quick-actions ul li:hover {
+    background-color: #e9ecef; 
+    cursor: pointer;
+  }
+  .last-orders ul li:hover {
+    background-color: #e9ecef; 
+    cursor: pointer;
+  }
+.sidebar {
+  width: 180px;
+  background-color:white;
+  padding: 20px;
+  height: 710px;
+  box-sizing: border-box;
+  border-right: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.sidebar h2 {
+  margin: 0 0 20px 0;
+  font-size: 24px;
+  color: #333;
+}
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+.sidebar nav ul li {
+  margin-bottom: 10px;
+}
+.sidebar nav ul li a {
+  text-decoration: none;
+  color: #666;
+  font-size: 16px;
+  display: block;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.quick-actions, .last-orders {
+  margin-bottom: 30px;
+}
+
+.quick-actions p, .last-orders p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.quick-actions ul, .last-orders ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quick-actions ul li, .last-orders ul li {
+  margin-bottom: 5px;
+}
+
+.quick-actions ul li a, .last-orders ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  display: block;
+  padding: 5px 10px;
+}
+
+.quick-actions ul li a:hover, .last-orders ul li a:hover {
+  background-color: blue;
+  cursor: pointer;
+}
+
+.bottom-buttons {
+  margin-top: auto;
+}
+
+.see-all {
+  display: block;
+  text-decoration: none;
+  color: #007bff;
+  font-size: 14px;
+  padding: 5px 10px;
+  margin-bottom: 0px;
+}
+
+.see-all:hover {
+  background-color: #e9ecef;
+}
+
+.logout {
+  display: block;
+  text-decoration: none;
+  color: #dc3545;
+  font-size: 14px;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f2f5;
+}
+
+.main-content .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.main-content .header .orders {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.main-content .header .nav-tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.main-content .header .nav-tabs button {
+    padding: 10px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #666;
+    border-radius: 20px;
+}
+
+.top-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+.top-nav .user {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.category-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.category-nav h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.category-nav .tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.category-nav .tabs button {
+    padding: 10px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #666;
+    border-radius: 20px;
+}
+
+.category-nav .tabs button.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+}
+.content1
+{
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    width: 750px;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: red;
+    justify-content: center;
+}
+.content2
+{
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    width: 750px;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color:yellow;
+    justify-content: center;
+}
+.content1 h1{
+    margin-top: 11%;
+}
+.content2 h1{
+    margin-top: 11%;
+}
+#Discount
+{
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    border: 1px black;
+    margin-top: 16%;
+    margin-left: -30%;
+    height: 65px;
+    width: 90px;
+    border-style: solid;
+}
+.content2 p{
+    padding-right: 50px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h id="heading">BuyMore</h>
+            <nav>
+              <ul>
+                <li><h1>Popular Products</h1></li>
+                <li>Explore New</li>
+                <li>Clothing and Shoes</li>
+                <li>Gifts and Living</li>
+                <li>Imagination</li>
+              </ul>
+            </nav>
+            <div class="quick-actions">
+              <p>Quick actions</p>
+              <ul>
+                <li>Request for product</li>
+                <li>Add member</li>
+              </ul>
+            </div>
+            <div class="last-orders">
+              <p>Last orders</p>
+              <ul>
+                <li>Order OXC</li>
+                <li>Outerwear</li>
+              </ul>
+              <a class="see-all">See all</a>
+            </div>
+            <a class="logout">Log out</a>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <div class="orders">37 <span>Orders</span> <span>Last 7 days</span></div>
+                <div class="nav-tabs">
+                    <button class="active">Dashboard</button>
+                    <button>Website</button>
+                </div>
+                <div class="cart">
+                </div>
+            </div>
+            <div class="category-nav">
+                <h2>Explore</h2>
+                <div class="tabs">
+                    <button class="active">All</button>
+                    <button>Men</button>
+                    <button>Women</button>
+                </div>
+            </div>
+            <div class="explore">
+                <div class="content1">
+                     <h1>GET UPTO 50% OFF</h1>
+                     <button id="Discount"> get Discount</button>
+                </div>
+                <div class="content2">
+                    <h1>Winters Weekend</h1>
+                    <p>keep it casual</p>
+               </div>
+        </div>
+        </div>
+    </div>
+    <div class="top-nav">
+        <div class="filters">Filters</div>
+        <div class="search">Search</div>
+        <div class="user">
+            <span>profile</span>
+        </div>
+</body>
+</html>
