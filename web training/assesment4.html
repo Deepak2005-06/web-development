@@ -1,309 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
     <style>
-      .container {
-            display: flex;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
-    #heading
-    {
-        font-size: xx-large;
-    }
-    .quick-actions ul li:hover {
-    background-color: #e9ecef; 
-    cursor: pointer;
-  }
-  .last-orders ul li:hover {
-    background-color: #e9ecef; 
-    cursor: pointer;
-  }
-.sidebar {
-  width: 180px;
-  background-color:white;
-  padding: 20px;
-  height: 710px;
-  box-sizing: border-box;
-  border-right: 1px solid grey;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-}
-.sidebar h2 {
-  margin: 0 0 20px 0;
-  font-size: 24px;
-  color: #333;
-}
-.sidebar nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 30px 0;
-}
-.sidebar nav ul li {
-  margin-bottom: 10px;
-}
-.sidebar nav ul li a {
-  text-decoration: none;
-  color: #666;
-  font-size: 16px;
-  display: block;
-  padding: 8px 15px;
-  border-radius: 5px;
-}
 
-.quick-actions, .last-orders {
-  margin-bottom: 30px;
-}
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f5f5;
+            height: 100vh;
+        }
 
-.quick-actions p, .last-orders p {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
+        .screen1 {
+            display: flex;
+            flex-direction: column;
+            width: 360px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            right: 20%;
+            position: relative; 
 
-.quick-actions ul, .last-orders ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+        }
+        .screen2 {
+                display: flex;
+                flex-direction: column;
+                width: 360px;
+                background-color: #fff;
+                border-radius: 20px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                right: 10%;
+                position: relative; 
+                height: 100px;
+                margin-left: 20px;
+            
+            }
 
-.quick-actions ul li, .last-orders ul li {
-  margin-bottom: 5px;
-}
+        header {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
 
-.quick-actions ul li a, .last-orders ul li a {
-  text-decoration: none;
-  color: #333;
-  font-size: 14px;
-  display: block;
-  padding: 5px 10px;
-}
+        #top {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: yellowgreen;
+            padding: 10px;
+            border-radius: 10px;
+        }
 
-.quick-actions ul li a:hover, .last-orders ul li a:hover {
-  background-color: blue;
-  cursor: pointer;
-}
+        #pfimg {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
 
-.bottom-buttons {
-  margin-top: auto;
-}
+        #name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
 
-.see-all {
-  display: block;
-  text-decoration: none;
-  color: #007bff;
-  font-size: 14px;
-  padding: 5px 10px;
-  margin-bottom: 0px;
-}
+        #name span {
+            color: red;
+        }
 
-.see-all:hover {
-  background-color: #e9ecef;
-}
+        p {
+            font-size: 12px;
+            color: gray;
+        }
 
-.logout {
-  display: block;
-  text-decoration: none;
-  color: #dc3545;
-  font-size: 14px;
-  padding: 8px 15px;
-  border-radius: 5px;
-}
-.main-content {
-    flex: 1;
-    padding: 20px;
-    background-color: #f0f2f5;
-}
+        #searchbox {
+            width: 80%;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-top: 10px;
+        }
 
-.main-content .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
+        .sliding {
+            margin-top: 20px;
+        }
 
-.main-content .header .orders {
-    font-size: 24px;
-    font-weight: bold;
-}
+        .sliding h2 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
 
-.main-content .header .nav-tabs {
-    display: flex;
-    gap: 10px;
-}
+        .sliding li {
+            display: flex;
+            gap: 10px;
+            
+        }
 
-.main-content .header .nav-tabs button {
-    padding: 10px 20px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-size: 16px;
-    color: #666;
-    border-radius: 20px;
-}
+        .sliding div {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            white-space: nowrap;
+        }
 
-.top-nav {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 20px;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-}
-.top-nav .user {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-.category-nav {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 20px;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-}
+        .List {
+            margin-top: 20px;
+        }
 
-.category-nav h2 {
-    margin: 0;
-    font-size: 24px;
-    color: #333;
-}
+        .List h2 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
 
-.category-nav .tabs {
-    display: flex;
-    gap: 10px;
-}
+        .List div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
 
-.category-nav .tabs button {
-    padding: 10px 20px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-size: 16px;
-    color: #666;
-    border-radius: 20px;
-}
+        .List div span {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        #create-task-btn
+        {
+            position: relative;
+            height: 30px;
+            width: 100px;
+            left: 30%;
+            border-radius: 20px;
+            background-color: aqua;
+        }
+         
 
-.category-nav .tabs button.active {
-    color: #007bff;
-    border-bottom: 2px solid #007bff;
-}
-.content1
-{
-    display: flex;
-    flex-direction: row;
-    height: 200px;
-    width: 750px;
-    border-radius: 10px;
-    margin-top: 20px;
-    background-color: red;
-    justify-content: center;
-}
-.content2
-{
-    display: flex;
-    flex-direction: row;
-    height: 200px;
-    width: 750px;
-    border-radius: 10px;
-    margin-top: 20px;
-    background-color:yellow;
-    justify-content: center;
-}
-.content1 h1{
-    margin-top: 11%;
-}
-.content2 h1{
-    margin-top: 11%;
-}
-#Discount
-{
-    background-color: white;
-    color: black;
-    border-radius: 20px;
-    border: 1px black;
-    margin-top: 16%;
-    margin-left: -30%;
-    height: 65px;
-    width: 90px;
-    border-style: solid;
-}
-.content2 p{
-    padding-right: 50px;
-}
+        .List div{
+            border-right-color: yellowgreen;
+            border-right-width: 5px;
+            border-right-style: solid;
+            border-radius: 10px; 
+            background-color: #f0f0f0; 
+        }
+
+        .List div:hover {
+            background-color: #e0e0e0;
+            cursor: pointer;
+        }
+        #create-task-btn:hover {
+            background-color: #00bfff;
+            color: white;
+            cursor: pointer;
+        }
+        #percent
+        {
+            background-color: red;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: white;
+            font-weight: bold;
+            width: 50px;
+            text-align: center;
+        }
+        #List p
+        {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            color: #333;
+            font-weight: normal;
+        }
+        #taskname, #duedate, #priority, #sub-task, #description {
+            margin-top: 20px;
+        }
+        #sub-task, #description {
+            display: flex;
+            flex-direction: column;
+        }
+        #sub-task-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        #sub-task-list li {
+            background-color: #f5f5f5;
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+        #save-task-btn, #add-sub-task-btn {
+            background-color: yellowgreen;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        #save-task-btn:hover, #add-sub-task-btn:hover {
+            background-color: #00bfff;
+        }
+        #taskname, #duedate, #priority, #sub-task, #description {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+        #taskname:focus, #duedate:focus, #priority:focus, #sub-task:focus, #description:focus {
+            border-color: yellowgreen;
+            outline: none;
+        }
+        #taskname::placeholder, #duedate::placeholder, #priority::placeholder, #sub-task::placeholder, #description::placeholder {
+            color: #aaa;
+        }
+        #taskname, #duedate, #priority, #sub-task, #description {
+            font-size: 14px;
+        }
+        #taskname, #duedate, #priority, #sub-task, #description {
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        #taskname:focus, #duedate:focus, #priority:focus, #sub-task:focus, #description:focus {
+            border-color: yellowgreen;
+            outline: none;
+        }
+        #taskname::placeholder, #duedate::placeholder, #priority::placeholder, #sub-task::placeholder, #description::placeholder {
+            color: #aaa;
+        }
+        #taskname, #duedate, #priority, #sub-task, #description {
+            font-size: 14px;
+        }
+        #taskname, #duedate, #priority, #sub-task, #description {
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="sidebar">
-            <h id="heading">BuyMore</h>
-            <nav>
-              <ul>
-                <li><h1>Popular Products</h1></li>
-                <li>Explore New</li>
-                <li>Clothing and Shoes</li>
-                <li>Gifts and Living</li>
-                <li>Imagination</li>
-              </ul>
+    <div class="screen1">
+        <header>
+            <nav id="top">
+                <div>
+                    <img src="../istockphoto-1307275152-1024x1024.jpg" alt="Profile Image" id="pfimg">
+                </div>
+                <h id="name">Hello, <span>Damian</span></h>
+                <p>Manage your tasks</p>
+                <input type="text" id="searchbox" placeholder="Search">
             </nav>
-            <div class="quick-actions">
-              <p>Quick actions</p>
-              <ul>
-                <li>Request for product</li>
-                <li>Add member</li>
-              </ul>
-            </div>
-            <div class="last-orders">
-              <p>Last orders</p>
-              <ul>
-                <li>Order OXC</li>
-                <li>Outerwear</li>
-              </ul>
-              <a class="see-all">See all</a>
-            </div>
-            <a class="logout">Log out</a>
+        </header>
+        <div class="sliding">
+            <h2>Last added</h2>
+            <li>
+                <div id="slidecontent">Football Cup training dribbling<br> <span style="color: grey;font-size: small;">3 task</span></div>
+                <div id="slidecontent2">UI/UX App Design<br> <span style="color: grey;font-size: small;">3 task</span></div>
+            </li>
         </div>
-        <div class="main-content">
-            <div class="header">
-                <div class="orders">37 <span>Orders</span> <span>Last 7 days</span></div>
-                <div class="nav-tabs">
-                    <button class="active">Dashboard</button>
-                    <button>Website</button>
-                </div>
-                <div class="cart">
-                </div>
-            </div>
-            <div class="category-nav">
-                <h2>Explore</h2>
-                <div class="tabs">
-                    <button class="active">All</button>
-                    <button>Men</button>
-                    <button>Women</button>
-                </div>
-            </div>
-            <div class="explore">
-                <div class="content1">
-                     <h1>GET UPTO 50% OFF</h1>
-                     <button id="Discount"> get Discount</button>
-                </div>
-                <div class="content2">
-                    <h1>Winters Weekend</h1>
-                    <p>keep it casual</p>
-               </div>
+        <div class="List">
+            <h2>Tasks List</h2>
+            <div ><span id="percent">85%</span>  <p style="position: relative; right: 140px;">UI/UX App Design</p></div>
+            <div ><span id="percent">85%</span>   <p style="position: relative;right: 100px;">View candidates resumes</p></div>
+            <div ><span id="percent">85%</span>  <p style="position: relative;right: 80px;">Football cup training Dribbling</p></div>    
         </div>
+       
+        <div>
+             <button id="create-task-btn">Create Task</button>
         </div>
+        
     </div>
-    <div class="top-nav">
-        <div class="filters">Filters</div>
-        <div class="search">Search</div>
-        <div class="user">
-            <span>profile</span>
-        </div>
+
+    <div id="screen2" style="height: 95%;bottom: 0; width: 20%; background-color: #fff; border-radius: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); padding: 20px; display:">
+        <h>Create new Task</h2>
+        <hr>
+        <div id="taskname" s>
+            <label for="taskname">Main task Name</label><br>
+            <input type="text" id="taskname" placeholder="Enter task name"><br>
+            <div id="duedate">
+                <label for="duedate">Due Date</label><br>
+                <input type="date" id="duedate"><br>
+            </div>
+            <div id="priority">
+                <label for="priority">Priority</label><br>
+                <select id="priority">
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select><br>
+            </div>
+            <div id="sub-task">
+                <label for="sub-task">Sub Task</label><br>
+                <input type="text" id="sub-task" placeholder="Enter sub task"><br>
+                <button id="add-sub-task-btn">Add Sub Task</button>
+                <ul id="sub-task-list"></ul>
+
+            </div>
+            <div id="description">
+                <label for="description">Description</label><br>
+                <textarea id="description" rows="4" placeholder="Enter task description"></textarea><br>
+                <button id="save-task-btn">Save Task</button>
+            </div>
+    </div>
+
+
+
+    
 </body>
 </html>
