@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="name" placeholder="Enter your name">
+    <input type="password" id="password" placeholder="Enter your password">
+    <button id="submit">Login</button>
+
+    
+</body>
+
+<script>
+
+       localStorage.setItem('name', 'John Doe');
+       localStorage.setItem('password', 'admin1234');
+        document.getElementById('submit').addEventListener('click', () => {
+        const name = document.getElementById('name').value;
+        const password = document.getElementById('password').value;
+
+        if (localStorage.getItem('name') === name && localStorage.getItem('password') === password) {
+            alert('Login successful!');
+         localStorage.setItem('isLoggedIn', true);
+            window.location.href = 'https://www.w3schools.com'; 
+        } else {
+            alert('Invalid credentials!');
+        }
+
+    });
+
+ 
+</script>
+</html>
