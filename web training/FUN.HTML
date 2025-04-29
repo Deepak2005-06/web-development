@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Rental</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f0ff;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      width: 80%;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .header input {
+      padding: 5px;
+      width: 70%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .filters {
+      display: flex;
+      gap: 20px;
+    }
+    .filters div {
+      margin-bottom: 10px;
+    }
+    .filters input[type="checkbox"] {
+      margin-right: 5px;
+    }
+    .car-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .car-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+    .car-card img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    .car-card h3 {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    .car-card p {
+      margin: 5px 0;
+      color: #666;
+    }
+    .car-card button {
+      background-color: #a100ff;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .car-card button:hover {
+      background-color: #8800cc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <input type="text" placeholder="Search your car here">
+    </div>
+    <div class="filters">
+      <div>
+        <h4>Type</h4>
+        <input type="checkbox"> Sport (5)<br>
+        <input type="checkbox"> SUV (10)<br>
+        <input type="checkbox"> MPV (2)<br>
+        <input type="checkbox"> Sedan (6)<br>
+        <input type="checkbox"> Coupe (4)<br>
+        <input type="checkbox"> Hatchback (3)<br>
+      </div>
+      <div>
+        <h4>Persons</h4>
+        <input type="checkbox"> 2 Person (5)<br>
+        <input type="checkbox"> 4 Person (10)<br>
+        <input type="checkbox"> 6 Person (3)<br>
+        <input type="checkbox"> 8 or More (2)<br>
+      </div>
+      <div>
+        <h4>Price</h4>
+        <input type="range" min="0" max="200" value="200"> Max: $200.00
+      </div>
+    </div>
+    <div class="car-list">
+      <div class="car-card">
+        <img src="https://via.placeholder.com/150" alt="Nissan GT-R">
+        <h3>Nissan GT-R</h3>
+        <p>Sport</p>
+        <p>$80.00/day</p>
+        <button>Rent Now</button>
+      </div>
+      <div class="car-card">
+        <img src="https://via.placeholder.com/150" alt="Rolls-Royce">
+        <h3>Rolls-Royce</h3>
+        <p>Sedan</p>
+        <p>$90.00/day</p>
+        <button>Rent Now</button>
+      </div>
+      <div class="car-card">
+        <img src="https://via.placeholder.com/150" alt="Nissan GT-R">
+        <h3>Nissan GT-R</h3>
+        <p>Sport</p>
+        <p>$80.00/day</p>
+        <button>Rent Now</button>
+      </div>
+      <div class="car-card">
+        <img src="https://via.placeholder.com/150" alt="CR-V">
+        <h3>CR-V</h3>
+        <p>SUV</p>
+        <p>$80.00/day</p>
+        <button>Rent Now</button>
+      </div>
+      <div class="car-card">
+        <img src="https://via.placeholder.com/150" alt="All New Terios">
+        <h3>All New Terios</h3>
+        <p>SUV</p>
+        <p>$70.00/day</p>
+        <button>Rent Now</button>
+      </div>
+      <div class="car-card">
+        <img src="https://via.placeholder.com/150" alt="CR-V">
+        <h3>CR-V</h3>
+        <p>SUV</p>
+        <p>$80.00/day</p>
+        <button>Rent Now</button>
+      </div>
+      <div class="car-card">
+        <img src="https://via.placeholder.com/150" alt="New MG ZS">
+        <h3>New MG ZS</h3>
+        <p>SUV</p>
+        <p>$80.00/day</p>
+        <button>Rent Now</button>
+      </div>
+      <div class="car-card">
+        <img src="https://via.placeholder.com/150" alt="MG ZS Excite">
+        <h3>MG ZS Excite</h3>
+        <p>SUV</p>
+        <p>$70.00/day</p>
+        <button>Rent Now</button>
+      </div>
+      <div class="car-card">
+        <img src="https://via.placeholder.com/150" alt="New MG ZS">
+        <h3>New MG ZS</h3>
+        <p>SUV</p>
+        <p>$80.00/day</p>
+        <button>Rent Now</button>
+      </div>
+    </div>
+    <button>Show more car</button>
+  </div>
+</body>
+</html>

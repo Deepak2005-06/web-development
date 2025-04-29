@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Schedule</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .header .arrow {
+            font-size: 20px;
+            margin: 0 10px;
+        }
+
+        .date {
+            cursor: pointer;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .reset {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .sort {
+            font-size: 14px;
+        }
+
+        .sort-option {
+            color: #ff4d4d;
+            cursor: pointer;
+        }
+
+        .content {
+            display: flex;
+        }
+
+        .filter-section {
+            width: 30%;
+            padding: 10px;
+            border-right: 1px solid #ccc;
+        }
+
+        .filter-group {
+            margin-bottom: 10px;
+        }
+
+        .filter-group label {
+            display: block;
+            margin: 5px 0;
+        }
+
+        .train-list {
+            width: 70%;
+            padding: 10px;
+        }
+
+        .train-item {
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        .train-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+        }
+
+        .days {
+            color: #ff4d4d;
+        }
+
+        .train-details {
+            margin: 5px 0;
+        }
+
+        .schedule, .availability {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .train-fares {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .fare {
+            margin-right: 10px;
+        }
+
+        .regret {
+            color: #ff4d4d;
+        }
+
+        .rlw {
+            color: #007bff;
+        }
+
+        .time {
+            color: #666;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span>NEW DELHI (NDLS)</span> <span class="arrow">→</span> <span>MUMBAI CENTRAL (MMCT)</span>
+            <span class="date">Tue, 29 Apr 2025</span>
+        </div>
+        <div class="filters">
+            <button class="reset">RESET ALL</button>
+            <div class="sort">
+                Sort by: <span class="sort-option">Departure ↑</span> | Duration | Arrival
+            </div>
+        </div>
+        <div class="content">
+            <div class="filter-section">
+                <h3>Filters</h3>
+                <div class="filter-group">
+                    <label><input type="radio" name="quota" checked> General</label>
+                    <label><input type="radio" name="quota"> Tatkal</label>
+                </div>
+                <div class="filter-group">
+                    <label><input type="radio" name="ladies"> Ladies</label>
+                    <label><input type="radio" name="ladies"> Senior</label>
+                    <label><input type="radio" name="ladies"> Citizen/Lower Berth</label>
+                </div>
+                <div class="filter-group">
+                    <label><input type="checkbox" name="origin"> NZM</label>
+                    <label><input type="checkbox" name="origin"> NDLS</label>
+                    <label><input type="checkbox" name="origin"> DEE</label>
+                    <label><input type="checkbox" name="origin"> SZM</label>
+                    <label><input type="checkbox" name="origin"> ANDI</label>
+                </div>
+                <div class="filter-group">
+                    <label><input type="checkbox" name="destination"> MMCT</label>
+                    <label><input type="checkbox" name="destination"> CSMT</label>
+                    <label><input type="checkbox" name="destination"> PNVL</label>
+                    <label><input type="checkbox" name="destination"> BDTS</label>
+                </div>
+            </div>
+            <div class="train-list">
+                <div class="train-item">
+                    <div class="train-header">
+                        <span>12904 - GOLDEN TEMPLE M</span>
+                        <span class="days">SMTWTFS</span>
+                    </div>
+                    <div class="train-details">
+                        <span>04:00 NZM — 19h 35m — 23:35 MMCT</span>
+                        <a href="#" class="schedule">View Schedule</a>
+                    </div>
+                    <div class="train-fares">
+                        <span>2A <span class="fare regret">₹2335 REGRET</span> <span class="time">1hr ago</span></span>
+                        <span>3A <span class="fare regret">₹1630 REGRET</span> <span class="time">22 mins ago</span></span>
+                        <span>SL <span class="fare regret">₹620 REGRET</span> <span class="time">6 mins ago</span></span>
+                        <span>1A <span class="fare rlw">₹3955 RLWL6/WL4 47% Chance</span> <span class="time">30 mins ago</span></span>
+                    </div>
+                    <a href="#" class="availability">Check 6 days availability</a>
+                </div>
+                <div class="train-item">
+                    <div class="train-header">
+                        <span>12138 - PUNJAB MAIL</span>
+                        <span class="days">SMTWTFS</span>
+                    </div>
+                    <div class="train-details">
+                        <span>05:10 NDLS — 26h 25m — 07:35 CSMT</span>
+                        <a href="#" class="schedule">View Schedule</a>
+                    </div>
+                    <div class="train-fares">
+                        <span>2A <span class="fare rlw">₹2490 RLWL19/WL13 43% Chance</span> <span class="time">1hr ago</span></span>
+                        <span>3A <span class="fare rlw">₹1735 RLWL52/WL32 38% Chance</span> <span class="time">3 mins ago</span></span>
+                        <span>SL <span class="fare rlw">₹665 RLWL72/WL53 35% Chance</span> <span class="time">6 mins ago</span></span>
+                        <span>1A <span class="fare rlw">₹4230 RLWL1/WL1 63% Chance</span> <span class="time">30 mins ago</span></span>
+                    </div>
+                    <a href="#" class="availability">Check 6 days availability</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
